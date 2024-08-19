@@ -5,14 +5,14 @@ import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Rook extends ChessPiece {
-    public Rook(Board board, Color color) {
+public class Queen extends ChessPiece {
+    public Queen(Board board, Color color) {
         super(board, color);
     }
 
     @Override
     public String toString() {
-        return "R";
+        return "Q";
     }
     @Override
     public boolean[][] possibleMoves() {
@@ -59,6 +59,7 @@ public class Rook extends ChessPiece {
         if(getBoard().positionExists(p) && isThereOpponentPiece(p)){
             mat[p.getRow()][p.getColumn()] = true;
         }
+
         //noroeste
         p.setValues(position.getRow() -1, position.getColumn() -1 );
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)){
@@ -98,6 +99,7 @@ public class Rook extends ChessPiece {
         if(getBoard().positionExists(p) && isThereOpponentPiece(p)){
             mat[p.getRow()][p.getColumn()] = true;
         }
+
 
         return mat;
     }
